@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import argparse
 import sys
-from CalcRating import CalcRating
-from TextDataReader import TextDataReader
+from src.CalcRating import CalcRating
+from src.TextDataReader import TextDataReader
 
 
 def get_path_from_arguments(args) -> str:
@@ -24,3 +24,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

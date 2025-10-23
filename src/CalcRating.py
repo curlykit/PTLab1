@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Types import DataType
+from src.Types import DataType
 
 RatingType = dict[str, float]
 
@@ -17,3 +17,4 @@ class CalcRating:
                 self.rating[key] += subject[1]
             self.rating[key] /= len(self.data[key])
         return self.rating
+    

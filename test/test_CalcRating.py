@@ -9,7 +9,9 @@ RatingsType = dict[str, float]
 class TestCalcRating:
 
     @pytest.fixture()
-    def input_data(self) -> tuple[DataType, RatingsType]:
+    def input_data(
+        self
+    ) -> tuple[DataType, RatingsType]:
         data: DataType = {
             "Aбрамов Петр Сергеевич": [
                 ("математика", 80),
@@ -37,7 +39,9 @@ class TestCalcRating:
         calc_rating = CalcRating(input_data[0])
         assert input_data[0] == calc_rating.data
 
-    def test_calc(self, input_data: tuple[DataType, RatingsType]) -> None:
+    def test_calc(
+        self, input_data: tuple[DataType, RatingsType]
+    ) -> None:
         rating = CalcRating(input_data[0]).calc()
         for student in rating.keys():
             rating_score = rating[student]
