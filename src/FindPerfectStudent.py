@@ -16,6 +16,6 @@ class FindPerfectStudent:
                 perfect_students.append(student_name)
         
         if perfect_students:
-            return perfect_students[0]  # возвращаем первого найденного
+            return perfect_students[0]
         else:
             return "Студентов с 100 баллами по всем предметам не найдено"

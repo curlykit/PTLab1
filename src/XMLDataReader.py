@@ -21,7 +21,7 @@ class XMLDataReader(DataReader):
                 subjects = []
                 
                 for subject, grade in student_element[student_name].items():
-                    if subject != '@name':  # игнорируем атрибуты
+                    if subject != '@name':
                         subjects.append((subject, int(grade)))
                 
                 students[student_name] = subjects
