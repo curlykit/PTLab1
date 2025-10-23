@@ -5,8 +5,9 @@ import pytest
 
 RatingsType = dict[str, float]
 
+
 class TestCalcRating:
-    
+
     @pytest.fixture()
     def input_data(self) -> tuple[DataType, RatingsType]:
         data: DataType = {
@@ -22,12 +23,12 @@ class TestCalcRating:
                 ("литература", 97)
             ]
         }
-        
+
         rating_scores: RatingsType = {
             "Aбрамов Петр Сергеевич": 85.3333,
             "Петров Игорь Владимирович": 79.0000
         }
-        
+
         return data, rating_scores
 
     def test_init_calc_rating(self, input_data: tuple[DataType, RatingsType]) -> None:
@@ -38,4 +39,5 @@ class TestCalcRating:
         rating = CalcRating(input_data[0]).calc()
         for student in rating.keys():
             rating_score = rating[student]
-            assert pytest.approx(rating_score, abs=0.001) == input_data[1][student]
+            expected_score = input_data[1][student]
+            assert pytest.approx(rating_score, abs=0.001) == expected_score
