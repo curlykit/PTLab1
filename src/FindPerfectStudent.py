@@ -19,4 +19,3 @@ class FindPerfectStudent:
             return perfect_students[0]  # возвращаем первого найденного
         else:
             return "Студентов с 100 баллами по всем предметам не найдено"
-        

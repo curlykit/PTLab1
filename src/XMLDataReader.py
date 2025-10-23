@@ -27,4 +27,3 @@ class XMLDataReader(DataReader):
                 students[student_name] = subjects
         
         return students
-    
