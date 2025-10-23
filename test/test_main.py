@@ -5,7 +5,8 @@ import pytest
 
 @pytest.fixture()
 def correct_arguments_string() -> tuple[list[str], tuple[str, str]]:
-    return ["-p", "/home/user/file.txt"], ("/home/user/file.txt", "text")
+    args = ["-p", "/home/user/file.txt"]
+    return args, ("/home/user/file.txt", "text")
 
 
 @pytest.fixture()
