@@ -10,7 +10,9 @@ def correct_arguments_string() -> tuple[list[str], tuple[str, str]]:
 
 
 @pytest.fixture()
-def correct_arguments_string_with_format() -> tuple[list[str], tuple[str, str]]:
+def correct_arguments_string() -> tuple[
+    list[str], tuple[str, str]
+]:
     args = ["-p", "/home/user/file.txt", "-f", "xml"]
     return args, ("/home/user/file.txt", "xml")
 
