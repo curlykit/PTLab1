@@ -32,7 +32,7 @@ def test_get_path_from_correct_arguments(
 
 
 def test_get_path_from_correct_arguments_with_format(
-    correct_arguments_string_with_format: tuple[list[str], tuple[str, str]]
+    correct_arguments_with_format: tuple[list[str], tuple[str, str]]  # ← исправлено имя
 ) -> None:
     args = correct_arguments_string_with_format[0]
     path, file_format = get_path_from_arguments(args)
