@@ -20,4 +20,3 @@ class TextDataReader(DataReader):
                     self.students[self.key].append(
                         (subj.strip(), int(score.strip())))
         return self.students
-    
