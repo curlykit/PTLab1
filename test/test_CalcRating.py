@@ -40,5 +40,5 @@ class TestCalcRating:
         for student in rating.keys():
             rating_score = rating[student]
             expected = input_data[1][student]
-            assert abs(rating_score - expected) < 0.001
-            
+            diff = abs(rating_score - expected)
+            assert diff < 0.001
