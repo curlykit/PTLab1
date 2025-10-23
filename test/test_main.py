@@ -10,7 +10,7 @@ def correct_arguments_string() -> tuple[list[str], tuple[str, str]]:
 
 
 @pytest.fixture()
-def correct_arguments_string() -> tuple[
+def correct_arguments_with_format() -> tuple[
     list[str], tuple[str, str]
 ]:
     args = ["-p", "/home/user/file.txt", "-f", "xml"]
@@ -36,9 +36,9 @@ def test_get_path_from_correct_arguments_with_format(
         list[str], tuple[str, str]
     ]
 ) -> None:
-    args = correct_arguments_string_with_format[0]
+    args = correct_arguments_with_format[0]
     path, file_format = get_path_from_arguments(args)
-    expected_path, expected_format = correct_arguments_string_with_format[1]
+    expected_path, expected_format = correct_arguments_with_format[1]
     assert path == expected_path
     assert file_format == expected_format
 
