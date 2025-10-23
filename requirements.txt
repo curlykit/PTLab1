@@ -1,2 +1,5 @@
 pytest
 pycodestyle
+pytest
+pycodestyle
+xmltodict
