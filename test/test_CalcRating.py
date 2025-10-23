@@ -40,4 +40,5 @@ class TestCalcRating:
         for student in rating.keys():
             rating_score = rating[student]
             expected = input_data[1][student]
-            assert pytest.approx(rating_score, abs=0.001) == expected
+            assert abs(rating_score - expected) < 0.001
+            
