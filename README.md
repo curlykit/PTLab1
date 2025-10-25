@@ -10,7 +10,53 @@
 - Поиск студентов с 100 баллами по всем предметам (FindPerfectStudent)
 
 ## UML-диаграмма классов
-![Class Diagram](docs/class_diagram.puml)
+
+```mermaid
+classDiagram
+    class DataType {
+        <<type>>
+        dict[str, list[tuple[str, int]]]
+    }
+    
+    class RatingType {
+        <<type>>
+        dict[str, float]
+    }
+
+    class DataReader {
+        <<abstract>>
+        +read(path: str) DataType
+    }
+    
+    class TextDataReader {
+        -key: str
+        -students: DataType
+        +read(path: str) DataType
+    }
+    
+    class XMLDataReader {
+        +read(path: str) DataType
+    }
+    
+    class CalcRating {
+        -data: DataType
+        -rating: RatingType
+        +calc() RatingType
+    }
+    
+    class FindPerfectStudent {
+        -data: DataType
+        +find() str
+    }
+
+    DataReader <|-- TextDataReader
+    DataReader <|-- XMLDataReader
+    
+    DataReader --> DataType
+    CalcRating --> DataType
+    CalcRating --> RatingType
+    FindPerfectStudent --> DataType
+```
 
 ## Структура проекта
 
