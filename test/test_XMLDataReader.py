@@ -50,7 +50,6 @@ class TestXMLDataReader:
         empty_xml = """<?xml version="1.0" encoding="UTF-8"?><root></root>"""
         p = tmpdir.mkdir("datadir").join("empty.xml")
         p.write(empty_xml)
-        
         reader = XMLDataReader()
         result = reader.read(str(p))
         assert result == {}
@@ -59,7 +58,6 @@ class TestXMLDataReader:
         invalid_xml = "not a valid xml content"
         p = tmpdir.mkdir("datadir").join("invalid.xml")
         p.write(invalid_xml)
-        
         reader = XMLDataReader()
         try:
             result = reader.read(str(p))
