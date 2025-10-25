@@ -15,19 +15,19 @@
 ## Структура проекта
 
 rating/
-├── src/ # Исходный код
-│ ├── DataReader.py # Абстрактный класс для чтения данных
-│ ├── TextDataReader.py # Чтение из текстовых файлов
-│ ├── XMLDataReader.py # Чтение из XML файлов
-│ ├── CalcRating.py # Расчет рейтинга
-│ ├── FindPerfectStudent.py # Поиск отличников
-│ ├── Types.py # Типы данных
-│ └── main.py # Главная программа
-├── test/ # Тесты
-├── data/ # Тестовые данные
-├── docs/ # Документация
-└── .github/workflows/ # GitHub Actions
 
+├── src/                    # Исходный код
+│   ├── DataReader.py      # Абстрактный класс для чтения данных
+│   ├── TextDataReader.py  # Чтение из текстовых файлов
+│   ├── XMLDataReader.py   # Чтение из XML файлов
+│   ├── CalcRating.py      # Расчет рейтинга 
+│   ├── FindPerfectStudent.py # Поиск отличников
+│   ├── Types.py           # Типы данных
+│   └── main.py            # Главная программа
+├── test/                  # Тесты
+├── data/                  # Тестовые данные
+├── docs/                  # Документация
+└── .github/workflows/     # GitHub Actions
 
 
 ## Используемые технологии
