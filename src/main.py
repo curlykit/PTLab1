@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import argparse
 import sys
-from src.CalcRating import CalcRating
-from src.TextDataReader import TextDataReader
-from src.XMLDataReader import XMLDataReader
-from src.FindPerfectStudent import FindPerfectStudent
+# Изменяем импорты:
+from .CalcRating import CalcRating
+from .TextDataReader import TextDataReader
+from .XMLDataReader import XMLDataReader
+from .FindPerfectStudent import FindPerfectStudent
 
 
 def get_path_from_arguments(args) -> str:
