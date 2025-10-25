@@ -1,48 +1,48 @@
-@startuml
+## UML-диаграмма классов
 
-!define CLASS {
-  class DataType << (T,orchid) >> {
-    {static} dict[str, list[tuple[str, int]]]
-  }
-  
-  class RatingType << (T,orchid) >> {
-    {static} dict[str, float]
-  }
-}
+```mermaid
+classDiagram
+    class DataType {
+        <<type>>
+        dict[str, list[tuple[str, int]]]
+    }
+    
+    class RatingType {
+        <<type>>
+        dict[str, float]
+    }
 
-CLASS
+    class DataReader {
+        <<abstract>>
+        +read(path: str) DataType
+    }
+    
+    class TextDataReader {
+        -key: str
+        -students: DataType
+        +read(path: str) DataType
+    }
+    
+    class XMLDataReader {
+        +read(path: str) DataType
+    }
+    
+    class CalcRating {
+        -data: DataType
+        -rating: RatingType
+        +calc() RatingType
+    }
+    
+    class FindPerfectStudent {
+        -data: DataType
+        +find() str
+    }
 
-abstract class DataReader {
-  {abstract} + read(path: str): DataType
-}
-
-class TextDataReader {
-  - key: str
-  - students: DataType
-  + read(path: str): DataType
-}
-
-class XMLDataReader {
-  + read(path: str): DataType
-}
-
-class CalcRating {
-  - data: DataType
-  - rating: RatingType
-  + calc(): RatingType
-}
-
-class FindPerfectStudent {
-  - data: DataType
-  + find(): str
-}
-
-DataReader <|-- TextDataReader
-DataReader <|-- XMLDataReader
-
-DataType --> DataReader
-DataType --> CalcRating
-DataType --> FindPerfectStudent
-RatingType --> CalcRating
-
-@enduml
+    DataReader <|-- TextDataReader
+    DataReader <|-- XMLDataReader
+    
+    DataReader --> DataType
+    CalcRating --> DataType
+    CalcRating --> RatingType
+    FindPerfectStudent --> DataType
+```

@@ -19,20 +19,14 @@ def get_path_from_arguments(args) -> str:
 
 def main():
     path, file_format = get_path_from_arguments(sys.argv[1:])
-
     if file_format == "xml":
         reader = XMLDataReader()
     else:
         reader = TextDataReader()
-
     students = reader.read(path)
     print("Students: ", students)
-
-    # Расчет рейтинга
     rating = CalcRating(students).calc()
     print("Rating: ", rating)
-
-    # Поиск идеального студента
     perfect_finder = FindPerfectStudent(students)
     perfect_student = perfect_finder.find()
     print("Perfect student: ", perfect_student)
