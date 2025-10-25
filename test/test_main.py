@@ -43,9 +43,10 @@ def test_get_path_from_correct_arguments_with_format(
     assert file_format == expected_format
 
 
-def test_get_path_from_noncorrect_arguments(
-    noncorrect_arguments_string: list[str]
+def test_get_path_from_correct_arguments(
+    correct_arguments_string: tuple[list[str], str]
 ) -> None:
-    with pytest.raises(SystemExit) as e:
-        get_path_from_arguments(noncorrect_arguments_string[0])
-    assert e.type == SystemExit
+    path, file_format = get_path_from_arguments(correct_arguments_string[0])  # ← исправлено
+    expected_path = correct_arguments_string[1]
+    assert path == expected_path
+    assert file_format == "text"  # ← добавлена проверка формата
