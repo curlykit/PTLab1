@@ -48,7 +48,8 @@ def test_get_path_from_correct_arguments(
         list[str], tuple[str, str]
     ]
 ) -> None:
-    path, file_format = get_path_from_arguments(correct_arguments_string[0])  # ← исправлено
+    args = correct_arguments_string[0]
+    path, file_format = get_path_from_arguments(args)
     expected_path = correct_arguments_string[1]
     assert path == expected_path
     assert file_format == "text"  # ← добавлена проверка формата
