@@ -95,4 +95,5 @@ pytest test
 python src/main.py -p data/data.txt
 
 # Запуск с XML файлом
-python src/main.py -p data/data.xml -f xml
+$env:PYTHONPATH = "D:\rating"
+python src/main.py -p data/test_data.xml -f xml
