@@ -57,12 +57,12 @@ classDiagram
     DataReader <|-- XMLDataReader
 
     %% Связи использования (зависимости)
-    DataReader ..> DataType : возвращает
-    TextDataReader ..> DataType : использует
-    XMLDataReader ..> DataType : возвращает
-    CalcRating ..> DataType : использует
-    CalcRating ..> RatingType : возвращает
-    FindPerfectStudent ..> DataType : использует
+    DataReader ..> DataType
+    TextDataReader ..> DataType
+    XMLDataReader ..> DataType
+    CalcRating ..> DataType
+    CalcRating ..> RatingType
+    FindPerfectStudent ..> DataType
 ```
 
 ## Структура проекта
