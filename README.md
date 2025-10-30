@@ -13,18 +13,20 @@
 
 ```mermaid
 classDiagram
+    %% Типы данных
     class DataType {
-        <<type>>
+        <<DataType>>
         dict[str, list[tuple[str, int]]]
     }
     
     class RatingType {
-        <<type>>
+        <<RatingType>>
         dict[str, float]
     }
 
+    %% Абстрактный класс и его реализации
     class DataReader {
-        <<abstract>>
+        <<Abstract>>
         +read(path: str) DataType
     }
     
@@ -38,6 +40,7 @@ classDiagram
         +read(path: str) DataType
     }
     
+    %% Классы для вычислений
     class CalcRating {
         -data: DataType
         -rating: RatingType
@@ -49,13 +52,17 @@ classDiagram
         +find() str
     }
 
+    %% Связи наследования
     DataReader <|-- TextDataReader
     DataReader <|-- XMLDataReader
-    
-    DataReader --> DataType
-    CalcRating --> DataType
-    CalcRating --> RatingType
-    FindPerfectStudent --> DataType
+
+    %% Связи использования (зависимости)
+    DataReader ..> DataType : возвращает
+    TextDataReader ..> DataType : использует
+    XMLDataReader ..> DataType : возвращает
+    CalcRating ..> DataType : использует
+    CalcRating ..> RatingType : возвращает
+    FindPerfectStudent ..> DataType : использует
 ```
 
 ## Структура проекта
